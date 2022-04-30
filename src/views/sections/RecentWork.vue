@@ -1,7 +1,7 @@
 <template>
     <v-container class="py-16 px-4">
         <v-row>
-            <v-col class="text-h4">Progetti Recenti</v-col>
+            <v-col class="text-h4">Dove Sono</v-col>
         </v-row>
         <v-row dense class="mt-3">
             <v-col v-for="(project, index) in projects" :key="index" class="d-flex child-flex" cols="12" xl="3" lg="4" md="6" sm="6">

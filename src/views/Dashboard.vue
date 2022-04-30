@@ -4,15 +4,14 @@
             height="100vh"
             dark
             src="https://images.unsplash.com/photo-1554034483-04fda0d3507b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=1080">
+            <v-overlay color="black" opacity="0.2"></v-overlay>
             <v-row fill-height align="center" justify="center">
                 <v-content class="text-center">
                     <v-row align="center" justify="center">   
-                        <v-col class="text-right">
-                            <v-avatar size="150">
-                                <img :src="require('@/assets/my-avatar.jpeg')" alt="Andrea Petreti"/>
-                            </v-avatar>
-                        </v-col>
-                        <v-col class="text-left title">
+                        <!-- <v-col class="text-left">
+                            <img src="img/be-aesthetic-fit.png" alt="Be Aesthetic"/>
+                        </v-col> -->
+                        <!-- <v-col class="text-left title">
                             Ciao, sono Andrea Petreti!
                         </v-col>
                         <v-col cols="12">
@@ -25,7 +24,7 @@
                         </v-col>
                         <v-col cols="12" v-if="$vuetify.breakpoint.smAndDown"> 
                             <v-btn text outlined color="white" large href="/cv">Il mio curriculum</v-btn>
-                        </v-col>
+                        </v-col> -->
                     </v-row>
                 </v-content>
             </v-row>

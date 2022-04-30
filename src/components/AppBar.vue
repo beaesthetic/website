@@ -1,8 +1,11 @@
 <template>
-  <v-app-bar fixed elevate-on-scroll ref="appbar" :color="appBarColor" dark>
-      <v-container>
-        <v-layout>
-          <v-btn text>Andrea Petreti</v-btn>
+  <v-app-bar fixed elevate-on-scroll ref="appbar" :color="appBarColor" dark prominent>
+      <v-col>
+
+      </v-col>
+      <v-container fill-height>
+        <v-layout row wrap align-center>
+          <v-img src="img/be-aesthetic-fit.png" max-width="190" contain aspect-ratio="2.24"></v-img>
           <v-spacer></v-spacer>
 
           <v-toolbar-items class="text-right hidden-sm-and-down">
@@ -10,14 +13,14 @@
               <v-btn :key="item.goto_id"
                 :x-small="$vuetify.breakpoint.smAndDown"
                 @click="menuItemClick(item)" 
-                text> {{ item.section_name }}</v-btn>
+                text color="black"> {{ item.section_name }}</v-btn>
             </template>
           </v-toolbar-items>
 
           <v-menu v-if="isMobile" class="hidden-md-and-up">
             <template v-slot:activator="{ on }">
               <v-btn icon v-on="on">
-                <v-icon color="white">mdi-menu</v-icon>
+                <v-icon color="black">mdi-menu</v-icon>
               </v-btn>
             </template>
             <v-list>
@@ -38,10 +41,11 @@ export default {
   data: () => ({
     appBarScrolled: false,
     menu: [
-      { section_name: "Su di me", goto_id: "#section-about-me"},
-      { section_name: "Progetti", goto_id: "#recent-works"},
-      { section_name: "Contatti", goto_id: "#contact"},
-      { section_name: "Curriculum", ref: "/cv"}
+      { section_name: "Chi sono", goto_id: "#about-me"},
+      { section_name: "Dove", goto_id: "#where"},
+      { section_name: "Orari", goto_id: "#timetables"},
+      { section_name: "Marchi", goto_id: "#marchi" },
+      { section_name: "Contatti", goto_id: "#contacts"},
     ]
   }),
   methods: {
@@ -55,7 +59,7 @@ export default {
   },
   computed: {
     appBarColor: function() {
-      return this.appBarScrolled ? '#212529' : 'transparent';
+      return this.appBarScrolled ? 'white' : 'white';
     },
     isMobile() {
       return this.$vuetify.breakpoint.smAndDown;
@@ -71,6 +75,9 @@ export default {
 
 <style scoped>
 .scrolled-bar {
-  color: #616161 !important
+  color: #616161 !important;
+}
+.app-bar {
+  min-height: 90px !important;
 }
 </style>
