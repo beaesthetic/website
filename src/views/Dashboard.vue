@@ -2,7 +2,7 @@
     <div>
         <v-parallax class="fill-viewport"
             height="100vh"
-            dark
+            white
             src="https://images.unsplash.com/photo-1554034483-04fda0d3507b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=1080">
             <v-overlay color="black" opacity="0.2"></v-overlay>
             <v-row fill-height align="center" justify="center">
@@ -30,10 +30,10 @@
             </v-row>
         </v-parallax>
     
-        <section class="section-about-me dark-grey" id="section-about-me">
-            <about-me />
+        <section class="section-where-i-am">
+            <where-i-am />
         </section>
-
+        
         <section class="section-project" id="recent-works">
             <work-section/>
         </section>
@@ -59,7 +59,7 @@
 
 <script>
 import workSection from '@/views/sections/RecentWork'
-import aboutMe from '@/views/sections/AboutMe'
+import whereIAm from '@/views/sections/WhereIAm'
 
 export default {
     name: 'main-dashboard',
@@ -81,7 +81,7 @@ export default {
     }),
     components: {
         'work-section': workSection,
-        'about-me': aboutMe
+        'where-i-am': whereIAm
     }
 }
 </script>
@@ -97,10 +97,8 @@ export default {
 .fill-viewport {
     height: 100vh;
 }
-.section-about-me {
-    background-color: white;/*#eee!important;*/
-}
-.section-project {
-    background-color: #eee;
+.section-where-i-am {
+    color: red !important;
+    background-color: white !important;
 }
 </style>

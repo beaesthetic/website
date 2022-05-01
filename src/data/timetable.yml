@@ -1,0 +1,15 @@
+timetable:
+  - day: Lunedi
+    time: "9.00 - 19.00"
+  - day: Martedi
+    time: "9.00 - 19.00"
+  - day: Mercoledi
+    time: "9.00 - 19.00"
+  - day: Giovedi
+    time: "9.00 - 19.00"
+  - day: Venerdi
+    time: "9.00 - 19.00"
+  - day: Sabato
+    time: "9.00 - 13.00"
+  - day: Domenica
+    time: "Chiuso"
