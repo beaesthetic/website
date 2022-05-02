@@ -7,6 +7,12 @@
   </v-app>
 </template>
 
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap');
+
+</style>
+
 <script>
 import AppBar from './components/AppBar.vue'
 

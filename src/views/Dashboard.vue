@@ -4,7 +4,6 @@
             height="100vh"
             white
             src="https://images.unsplash.com/photo-1554034483-04fda0d3507b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=1080">
-            <v-overlay color="black" opacity="0.2"></v-overlay>
             <v-row fill-height align="center" justify="center">
                 <v-content class="text-center">
                     <v-row align="center" justify="center">   
@@ -30,12 +29,13 @@
             </v-row>
         </v-parallax>
     
+        <section >
+            <section-services/>
+        </section>
+
+
         <section class="section-where-i-am">
             <where-i-am />
-        </section>
-        
-        <section class="section-project" id="recent-works">
-            <work-section/>
         </section>
 
         <v-footer class="dark-grey" padless id="contact">
@@ -58,8 +58,8 @@
 
 
 <script>
-import workSection from '@/views/sections/RecentWork'
 import whereIAm from '@/views/sections/WhereIAm'
+import SectionServices from '@/views/sections/SectionServices'
 
 export default {
     name: 'main-dashboard',
@@ -80,8 +80,8 @@ export default {
         ]
     }),
     components: {
-        'work-section': workSection,
-        'where-i-am': whereIAm
+        'where-i-am': whereIAm,
+        'section-services': SectionServices
     }
 }
 </script>

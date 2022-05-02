@@ -17,7 +17,12 @@
             </template>
           </v-toolbar-items>
 
-          <v-menu v-if="isMobile" class="hidden-md-and-up">
+
+          <v-btn icon v-if="isMobile" class="hidden-md-and-up">
+            <v-icon color="black">mdi-menu</v-icon>
+          </v-btn>
+          
+          <!-- <v-menu >
             <template v-slot:activator="{ on }">
               <v-btn icon v-on="on">
                 <v-icon color="black">mdi-menu</v-icon>
@@ -30,7 +35,8 @@
                   </v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>
+          </v-menu> -->
+
         </v-layout>
       </v-container>
   </v-app-bar>
@@ -74,9 +80,6 @@ export default {
 </script>
 
 <style scoped>
-.scrolled-bar {
-  color: #616161 !important;
-}
 .app-bar {
   min-height: 90px !important;
 }
