@@ -47,7 +47,7 @@ export default {
   data: () => ({
     appBarScrolled: false,
     menu: [
-      { section_name: "Chi sono", goto_id: "#about-me"},
+      { section_name: "Trattamenti", goto_id: "#services"},
       { section_name: "Dove", goto_id: "#where"},
       { section_name: "Orari", goto_id: "#timetables"},
       { section_name: "Marchi", goto_id: "#marchi" },

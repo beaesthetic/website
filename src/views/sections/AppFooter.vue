@@ -1,48 +1,75 @@
 <template>
     <v-footer class="background-pink" padless id="contact">
-        <v-card flat tile class="background-pink lighten-1 white--text text-center" width="100%">
+        <v-card flat tile class="background-pink lighten-1 black--text text-center" width="100%">
             <v-card-text>
-                <v-row>
-                    <v-col cols="6" class="text-left">
-                        BeAesthetic<br>
-                        Via Sant'Albertino, snc, 61043<br>
-                        Cagli (PU)
-                    </v-col>
-                    <v-col cols="12" xl="6" lg="6">
-                        <v-row>
-                            <v-col v-for="icon in icons" :key="icon.icon">
-                                <v-btn class="mx-4 white--text" icon :href="icon.link" target="_blank">
-                                    <v-icon size="24px">{{icon.icon}}</v-icon>   
-                                </v-btn>
-                                <div>{{icon.name}}</div>
-                            </v-col>
-                        </v-row>
-                    </v-col>
-                </v-row>
+                <v-container>
+                    <v-row align="center">
+                        <v-col cols="12" lg="6" xl="6" md="6" class="text-left">
+                            BeAesthetic<br>
+                            Via Sant'Albertino, snc, 61043<br>
+                            Cagli (PU)<br>
+                            Tel. 123456789<br>
+                            P. iva 02600650016<br>
+                        </v-col>
+                        <v-col cols="12" lg="6" xl="6" md="6">
+                            <div class="text-h7 mb-1" id="contacts-title"> Contatti </div>
+                            <v-layout class="d-inline-flex flex-wrap">
+                                <template v-for="(icon, index) in icons">
+                                    <icon-with-text class="ma-4" :title="icon.name" :icon="icon.icon" :href="icon.link" :key="index" />
+                                </template>
+                            </v-layout>
+                        </v-col>
+                    </v-row>
+                </v-container>
                 <!-- TODO: add vertical divider <v-divider :key="icon" vertical color="white"/> -->
             </v-card-text>
-            <v-divider dark class="inset-both"></v-divider>
-            <v-card-text class="white--text">
-                {{ new Date().getFullYear() }} — <strong>Andrea Petreti</strong>
+
+            <v-container><v-divider></v-divider></v-container>
+            <v-card-text class="black--text copyright">
+                {{ new Date().getFullYear() }} — BeAesthetic - Site by Andrea Petreti
             </v-card-text>
         </v-card>
     </v-footer>
 </template>
 
+<style scoped>
+#contacts-title {
+    font-family: 'Montserrat' !important;
+    font-weight: bold;
+}
+.copyright {
+    font-family: 'Montserrat' !important;
+    font-weight: 100;
+    font-size: 0.7em;
+    text-align: right;
+}
+</style>
+
 <script>
+
+import IconWithText from '@/components/IconWithText'
+
 export default {
+    components: {
+        'icon-with-text': IconWithText
+    },
     data: () => ({
         icons: [
+            {
+                icon: 'mdi-phone',
+                name: '123456789',
+                link: 'tel:123456789'
+            },
             {
                 icon: 'mdi-instagram',
                 name: 'beaesthetic',
                 link: '#'
             },
             {
-                icon: 'mdi-email',
-                name: 'centrobeasthetic@gmail.com',
-                link: 'mailto:centrobeasthetic@gmail.com'
-            }
+                icon: 'mdi-whatsapp',
+                name: '123456789',
+                link: 'whatsapp://send?abid=phonenumber'
+            },
         ]
     }),
 }

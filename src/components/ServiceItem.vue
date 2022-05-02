@@ -9,7 +9,6 @@
 
                     <v-card-title class="service-title text-center">
                         {{title}}<br>
-                        
                     </v-card-title>
                 </v-img>
             </v-card>

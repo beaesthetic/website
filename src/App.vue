@@ -12,7 +12,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap');
 
 .background-pink {
-  background-color: #EDC6B8 !important;
+  background-color: #fff1ff !important;
+  color: black !important;
 }
 
 </style>

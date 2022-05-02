@@ -3,10 +3,11 @@
         <v-parallax class="fill-viewport"
             height="100vh"
             white
-            src="https://images.unsplash.com/photo-1554034483-04fda0d3507b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=1080">
+            src="img/background-dashboard.jpg">
             <v-row fill-height align="center" justify="center">
                 <v-content class="text-center">
                     <v-row align="center" justify="center">   
+                        Ciaooo
                         <!-- <v-col class="text-left">
                             <img src="img/be-aesthetic-fit.png" alt="Be Aesthetic"/>
                         </v-col> -->
@@ -29,7 +30,7 @@
             </v-row>
         </v-parallax>
     
-        <section >
+        <section id="services">
             <section-services/>
         </section>
 

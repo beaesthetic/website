@@ -1,6 +1,6 @@
 timetable:
   - day: Lunedi
-    time: "9.00 - 19.00"
+    time: "14.00 - 19.00"
   - day: Martedi
     time: "9.00 - 19.00"
   - day: Mercoledi
@@ -10,6 +10,6 @@ timetable:
   - day: Venerdi
     time: "9.00 - 19.00"
   - day: Sabato
-    time: "9.00 - 13.00"
+    time: "9.00 - 12.00"
   - day: Domenica
     time: "Chiuso"
