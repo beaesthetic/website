@@ -38,20 +38,7 @@
             <where-i-am />
         </section>
 
-        <v-footer class="dark-grey" padless id="contact">
-            <v-card flat tile class="dark-grey lighten-1 white--text text-center" width="100%">
-                <v-card-text>
-                    <v-btn v-for="icon in icons" :key="icon.icon" class="mx-4 white--text" icon :href="icon.link" target="_blank">
-                        <v-icon size="24px">{{icon.icon}}</v-icon>
-                    </v-btn>
-                    <!-- TODO: add vertical divider <v-divider :key="icon" vertical color="white"/> -->
-                </v-card-text>
-                <v-divider dark class="inset-both"></v-divider>
-                <v-card-text class="white--text">
-                    {{ new Date().getFullYear() }} — <strong>Andrea Petreti</strong>
-                </v-card-text>
-            </v-card>
-        </v-footer>
+        <app-footer />
     </div>
 </template>
 
@@ -60,28 +47,14 @@
 <script>
 import whereIAm from '@/views/sections/WhereIAm'
 import SectionServices from '@/views/sections/SectionServices'
+import appFooter from '@/views/sections/AppFooter'
 
 export default {
     name: 'main-dashboard',
-    data: () => ({
-        icons: [
-            {
-                icon: 'mdi-github',
-                link: 'https://github.com/petretiandrea'
-            },
-            {
-                icon: 'mdi-linkedin',
-                link: 'https://www.linkedin.com/in/andrea-petreti/'
-            },
-            {
-                icon: 'mdi-email',
-                link: 'mailto:petretiandrea@gmail.com'
-            }
-        ]
-    }),
     components: {
         'where-i-am': whereIAm,
-        'section-services': SectionServices
+        'section-services': SectionServices,
+        'app-footer': appFooter
     }
 }
 </script>
