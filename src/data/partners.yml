@@ -1,0 +1,10 @@
+partners:
+  - name: "E-Brand"
+    picture: "img/partners/ebrand.svg"
+    link: "https://www.ebranditalia.com/it/"
+  - name: "Passione Unghie"
+    picture: "img/partners/passione-unghie.png"
+    link: "https://www.passioneunghie.com/"
+  - name: "Dermatrophyne"
+    picture: "img/partners/dermatrophyne.jpg"
+    link: "https://www.dermatrophine.it/it/"

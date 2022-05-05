@@ -8,8 +8,8 @@
 
         </v-row>
         <v-row dense class="mt-3">
-            <v-col v-for="(service, index) in services" :key="index" class="d-flex child-flex pa-0" cols="12" xl="3" lg="4" md="6" sm="6">
-                <service-item :title="service.title"  >
+            <v-col v-for="(service, index) in services" :key="index" class="d-flex child-flex pa-0" cols="12" xl="4" lg="4" md="6" sm="6">
+                <service-item :title="service.title" :thumbnail="service.thumbnail" >
                     <template #description><div v-html=service.description /></template>
                 </service-item>
             </v-col>

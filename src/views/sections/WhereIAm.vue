@@ -7,12 +7,12 @@
                 <v-card height="400" class="text-center mx-auto" elevation="0">
                     <v-container class="pa-0 text-center">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.960246376781!2d12.660899716166387!3d43.54487056744565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132c51181e625d41%3A0xac6dbc829f0e3f34!2sBeAesthetic!5e0!3m2!1sit!2sit!4v1651514715812!5m2!1sit!2sit" 
-                        width="100%" 
-                        height="400" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade" />
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade" />
                     </v-container>
                 </v-card>
             </v-col>

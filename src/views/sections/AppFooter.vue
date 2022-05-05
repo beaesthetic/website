@@ -8,7 +8,7 @@
                             BeAesthetic<br>
                             Via Sant'Albertino, snc, 61043<br>
                             Cagli (PU)<br>
-                            Tel. 123456789<br>
+                            Tel. 351 52 53 634<br>
                             P. iva 02600650016<br>
                         </v-col>
                         <v-col cols="12" lg="6" xl="6" md="6">
@@ -57,8 +57,8 @@ export default {
         icons: [
             {
                 icon: 'mdi-phone',
-                name: '123456789',
-                link: 'tel:123456789'
+                name: '+39 351 52 53 634',
+                link: 'tel:+393515253634'
             },
             {
                 icon: 'mdi-instagram',
@@ -67,8 +67,8 @@ export default {
             },
             {
                 icon: 'mdi-whatsapp',
-                name: '123456789',
-                link: 'whatsapp://send?abid=phonenumber'
+                name: '+39 351 52 53 634',
+                link: 'whatsapp://send?abid=+393515253634'
             },
         ]
     }),

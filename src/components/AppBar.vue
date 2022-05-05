@@ -48,7 +48,7 @@ export default {
     appBarScrolled: false,
     menu: [
       { section_name: "Trattamenti", goto_id: "#services"},
-      { section_name: "Dove", goto_id: "#where"},
+      { section_name: "Dove", goto_id: "#section-where-i-am"},
       { section_name: "Orari", goto_id: "#timetables"},
       { section_name: "Marchi", goto_id: "#marchi" },
       { section_name: "Contatti", goto_id: "#contacts"},
