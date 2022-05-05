@@ -1,14 +1,20 @@
 services:
   - title: "Trattamenti Viso"
+    name: 'face'
     thumbnail: "img/services/viso.jpg"
   - title: "Trattamenti Corpo"
+    name: 'body'
     thumbnail: "img/services/corpo.jpg"
   - title: "Trattamenti Mani"
+    name: 'hands'
     thumbnail: "img/services/mani.png"
   - title: "Trattamenti Piedi"
+    name: 'feet'
     thumbnail: "img/services/piedi.jpg"
   - title: "Epilazione"
+    name: 'epilation'
     thumbnail: "  img/services/epilazione.jpg"
   - title: "Solarium"
+    name: 'solarium'
     thumbnail: "img/services/solarium.jpg"
   

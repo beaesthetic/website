@@ -1,5 +1,5 @@
 <template>
-    <v-footer class="background-pink" padless id="contact">
+    <v-footer class="background-pink" padless id="contacts">
         <v-card flat tile class="background-pink lighten-1 black--text text-center" width="100%">
             <v-card-text>
                 <v-container>

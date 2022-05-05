@@ -9,7 +9,7 @@
         </v-row>
         <v-row dense class="mt-3">
             <v-col cols="12">
-                <v-slide-group v-model="model" class="pa-4">
+                <v-slide-group v-model="model" class="pa-4" show-arrows="always">
                     <v-slide-item v-for="(partner, index) in partners" :key="index" class="mx-4">
                         <v-card flat>
                             <a :href="partner.link" target="_blank">

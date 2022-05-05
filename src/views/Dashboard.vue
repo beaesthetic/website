@@ -35,11 +35,11 @@
         </section>
 
 
-        <section class="section-where-i-am">
+        <section id="section-where-i-am">
             <where-i-am />
         </section>
 
-        <section class="partners">
+        <section id="partners">
             <partners />
         </section>
 
@@ -77,8 +77,7 @@ export default {
 .fill-viewport {
     height: 100vh;
 }
-.section-where-i-am {
-    color: red !important;
+#section-where-i-am {
     background-color: white !important;
 }
 </style>

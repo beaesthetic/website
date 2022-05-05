@@ -1,21 +1,23 @@
 <template>
   <v-app-bar fixed elevate-on-scroll ref="appbar" :color="appBarColor" dark prominent>
-      <v-col>
-
-      </v-col>
       <v-container fill-height>
         <v-layout row wrap align-center>
-          <v-img src="img/be-aesthetic-fit.png" max-width="190" contain aspect-ratio="2.24"></v-img>
+          <v-img src="/img/be-aesthetic-fit.png" max-width="190" contain aspect-ratio="2.24"></v-img>
           <v-spacer></v-spacer>
 
-          <v-toolbar-items class="text-right hidden-sm-and-down">
-            <template v-for="item in menu">
-              <v-btn :key="item.goto_id"
-                :x-small="$vuetify.breakpoint.smAndDown"
-                @click="menuItemClick(item)" 
-                text color="black"> {{ item.section_name }}</v-btn>
+          <v-row class="text-right hidden-sm-and-down">
+            <v-col>
+              <template v-for="item in menu">
+                <v-btn 
+                  :key="item.goto_id"
+                  :x-small="$vuetify.breakpoint.smAndDown"
+                  @click="menuItemClick(item)" 
+                  text color="black"
+                  :class="{'active': selectedMenuItem != undefined && item.section_name == selectedMenuItem.section_name}"
+                > {{ item.section_name }}</v-btn>
             </template>
-          </v-toolbar-items>
+            </v-col>
+          </v-row>
 
 
           <v-btn icon v-if="isMobile" class="hidden-md-and-up">
@@ -42,16 +44,27 @@
   </v-app-bar>
 </template>
 
+<style scoped>
+.v-btn.active {
+  background-color: antiquewhite !important;
+}
+
+v-btn:hover:before {
+  opacity: 0 !important;
+}
+</style>
+
 <script>
 export default {
   data: () => ({
     appBarScrolled: false,
+    currentRoute: '',
     menu: [
-      { section_name: "Trattamenti", goto_id: "#services"},
-      { section_name: "Dove", goto_id: "#section-where-i-am"},
-      { section_name: "Orari", goto_id: "#timetables"},
-      { section_name: "Marchi", goto_id: "#marchi" },
-      { section_name: "Contatti", goto_id: "#contacts"},
+      { section_name: "Trattamenti", goto_id: "#services", route: "/services" },
+      { section_name: "Dove", goto_id: "#section-where-i-am", route: 's'},
+      { section_name: "Orari", goto_id: "#timetables", route: 's'},
+      { section_name: "Marchi", goto_id: "#partners", route: 's' },
+      { section_name: "Contatti", goto_id: "#contacts", route: 's'},
     ]
   }),
   methods: {
@@ -61,6 +74,7 @@ export default {
       } else if('ref' in item) {
         window.location.href = item.ref
       }
+      return false;
     }
   },
   computed: {
@@ -69,6 +83,17 @@ export default {
     },
     isMobile() {
       return this.$vuetify.breakpoint.smAndDown;
+    },
+    selectedMenuItem() {
+      return this.menu.find(item => {
+        return this.$route.path.startsWith(item.route)
+      })
+    }
+  },
+  watch: {
+    $route (to) {
+      let path = to.path;
+      this.currentRoute = path;
     }
   },
   mounted: function() {
