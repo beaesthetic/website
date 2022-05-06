@@ -42,8 +42,6 @@
         <section id="partners">
             <partners />
         </section>
-
-        <app-footer />
     </div>
 </template>
 
@@ -52,7 +50,6 @@
 <script>
 import whereIAm from '@/views/sections/WhereIAm'
 import SectionServices from '@/views/sections/SectionServices'
-import appFooter from '@/views/sections/AppFooter'
 import partners from '@/views/sections/SectionPartners'
 
 export default {
@@ -61,7 +58,6 @@ export default {
         'partners': partners,
         'where-i-am': whereIAm,
         'section-services': SectionServices,
-        'app-footer': appFooter
     }
 }
 </script>

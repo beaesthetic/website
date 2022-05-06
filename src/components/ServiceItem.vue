@@ -27,7 +27,7 @@
     letter-spacing: .1em;
     text-transform: uppercase;
     font-family: 'Montserrat';
-    font-weight: bold;
+    font-weight: 300;
     font-size: 1.5em;
     justify-content: center;
     

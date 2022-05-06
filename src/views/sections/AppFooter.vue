@@ -1,10 +1,10 @@
 <template>
-    <v-footer class="background-pink" padless id="contacts">
+    <v-footer class="background-pink" bottom padless id="contacts">
         <v-card flat tile class="background-pink lighten-1 black--text text-center" width="100%">
             <v-card-text>
                 <v-container>
                     <v-row align="center">
-                        <v-col cols="12" lg="6" xl="6" md="6" class="text-left">
+                        <v-col cols="12" lg="6" xl="6" md="6" class="text-left footer-info">
                             BeAesthetic<br>
                             Via Sant'Albertino, snc, 61043<br>
                             Cagli (PU)<br>
@@ -42,6 +42,9 @@
     font-weight: 100;
     font-size: 0.7em;
     text-align: right;
+}
+.footer-info {
+    font-family: 'Montserrat' !important;
 }
 </style>
 

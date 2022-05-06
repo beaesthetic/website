@@ -1,20 +1,77 @@
 services:
   - title: "Trattamenti Viso"
     name: 'face'
-    thumbnail: "img/services/viso.jpg"
+    thumbnail: "/img/services/viso.jpg"
+    descriptions:
+      - name: 'Detox e pill'
+        description: 'Bla bla'
+      - name: 'A - Ox'
+        description: 'Bla bla'
+      - name: 'Aox Occhi'
+        description: 'Bla bla'
+      - name: 'Derma Pure'
+        description: 'Bla bla'
+      - name: 'Chrono white'
+        description: 'Bla bla'
+      - name: 'Chrono repair'
+        description: 'Bla bla'
+      - name: 'Chrono age'
+        description: 'Bla bla'
+      - name: 'Pulizia viso vapore'
+        description: 'Bla bla'
+    
   - title: "Trattamenti Corpo"
     name: 'body'
-    thumbnail: "img/services/corpo.jpg"
+    thumbnail: "/img/services/corpo.jpg"
+    descriptions:
+      - name: 'Trattamento total body'
+        description: 'Bla bla'
+      - name: 'Trattamento body prescription slim'
+        description: 'Bla bla'
+      - name: 'Drain'
+        description: 'Bla bla'
+      - name: 'Drain Ice'
+        description: 'Bla bla'
+      - name: 'Gym'
+        description: 'Bla bla'
+      - name: 'Gym seno'
+        description: 'Bla bla'
+
   - title: "Trattamenti Mani"
     name: 'hands'
-    thumbnail: "img/services/mani.png"
+    thumbnail: "/img/services/mani.png"
+    descriptions:
+      - name: 'Manicure classica'
+        description: 'Bla bla'
+      - name: 'Smalto e Seminpermanente'
+        description: 'Bla bla'
+
   - title: "Trattamenti Piedi"
     name: 'feet'
-    thumbnail: "img/services/piedi.jpg"
+    thumbnail: "/img/services/piedi.jpg"
+    descriptions:
+      - name: 'Pedicure estetica'
+        description: 'Bla bla'
+      - name: 'Pedicure curativa'
+        description: 'Bla bla'
+      - name: 'Pedicure con smalto o semipermanente'
+        description: 'Bla bla'
+      - name: 'Pedicure dermafit'
+        description: 'Bla bla'
+
   - title: "Epilazione"
     name: 'epilation'
-    thumbnail: "  img/services/epilazione.jpg"
+    thumbnail: "/img/services/epilazione.jpg"
+    descriptions:
+      - name: 'Cera classica'
+        description: 'Bla bla'
+      - name: 'Epilazione con filo arabo'
+        description: 'Bla bla'
+
   - title: "Solarium"
     name: 'solarium'
-    thumbnail: "img/services/solarium.jpg"
+    thumbnail: "/img/services/solarium.jpg"
+    descriptions:
+      - name: 'Solarium al collagene'
+        description: 'Bla bla'
   

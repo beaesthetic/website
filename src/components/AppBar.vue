@@ -2,7 +2,10 @@
   <v-app-bar fixed elevate-on-scroll ref="appbar" :color="appBarColor" dark prominent>
       <v-container fill-height>
         <v-layout row wrap align-center>
-          <v-img src="/img/be-aesthetic-fit.png" max-width="190" contain aspect-ratio="2.24"></v-img>
+          <v-img src="/img/be-aesthetic-fit.png" 
+              max-width="190" 
+              contain aspect-ratio="2.24" 
+              @click.stop="$router.push('/')"/>
           <v-spacer></v-spacer>
 
           <v-row class="text-right hidden-sm-and-down">
@@ -60,19 +63,17 @@ export default {
     appBarScrolled: false,
     currentRoute: '',
     menu: [
-      { section_name: "Trattamenti", goto_id: "#services", route: "/services" },
-      { section_name: "Dove", goto_id: "#section-where-i-am", route: 's'},
-      { section_name: "Orari", goto_id: "#timetables", route: 's'},
-      { section_name: "Marchi", goto_id: "#partners", route: 's' },
-      { section_name: "Contatti", goto_id: "#contacts", route: 's'},
+      { section_name: "Trattamenti", route: "/#services", active_route: '/services' },
+      { section_name: "Dove", route: '/#section-where-i-am'},
+      { section_name: "Orari", route: '/#timetables'},
+      { section_name: "Marchi", route: '/#partners' },
+      { section_name: "Contatti", route: '/#contacts'},
     ]
   }),
   methods: {
     menuItemClick: function(item) {
-      if('goto_id' in item) {
-        this.$vuetify.goTo(item.goto_id, this.options)
-      } else if('ref' in item) {
-        window.location.href = item.ref
+      if ('route' in item) {
+        this.$router.push(item.route);
       }
       return false;
     }
@@ -86,7 +87,7 @@ export default {
     },
     selectedMenuItem() {
       return this.menu.find(item => {
-        return this.$route.path.startsWith(item.route)
+        return this.$route.path.startsWith(item.active_route)
       })
     }
   },

@@ -22,7 +22,12 @@ const routes = [
 const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
-    routes
+    routes,
+    scrollBehavior (to) {
+        return {
+            selector: to.hash,
+        };
+      }
 })
 
 export default router
