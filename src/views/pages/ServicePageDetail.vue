@@ -1,32 +1,34 @@
 <template>
     <div id="service-detail">
-        <v-img 
-            width="100%"
-            :src="service.thumbnail"
-            position="center center"
-            aspect-ratio="5"
-            gradient="to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.2) 100%">
+        <div v-if="service !== undefined">
+            <v-img 
+                width="100%"
+                :src="service.thumbnail"
+                position="center center"
+                aspect-ratio="5"
+                gradient="to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.2) 100%">
 
-            <v-container fill-height class="service-header">
-                <v-row>
-                    <v-col cols="7" offset="3" class="white--text">
-                        {{ service.title }}
-                        <v-divider class="my-4 white"></v-divider>
-                    </v-col>
-                </v-row>
-            </v-container>
-        </v-img>
-        <v-row class="my-5 fill-height">
-            <v-col cols="6" offset="4">
-                <template v-for="(description, index) in service.descriptions">
-                    <div :key="index" class="single-description">
-                        <h3 class="mt-5">{{ description.name }}</h3>
-                        <p class="mt-2">{{ description.description }}</p>
-                        <v-divider class="my-4 black" v-show="index < service.descriptions.size - 1"></v-divider>
-                    </div>
-                </template>
-            </v-col>
-        </v-row>
+                <v-container fill-height class="service-header">
+                    <v-row>
+                        <v-col cols="7" offset="3" class="white--text">
+                            {{ service.title }}
+                            <v-divider class="my-4 white"></v-divider>
+                        </v-col>
+                    </v-row>
+                </v-container>
+            </v-img>
+            <v-row class="my-5 fill-height">
+                <v-col cols="6" offset="4">
+                    <template v-for="(description, index) in service.descriptions">
+                        <div :key="index" class="single-description">
+                            <h3 class="mt-5">{{ description.name }}</h3>
+                            <p class="mt-2">{{ description.description }}</p>
+                            <v-divider class="my-4 black" v-show="index < service.descriptions.size - 1"></v-divider>
+                        </div>
+                    </template>
+                </v-col>
+            </v-row>
+        </div>
     </div>
 </template>
 
@@ -52,23 +54,27 @@
 </style>
 
 <script>
-import services from '@/data/services.yml'
+import { createNamespacedHelpers } from 'vuex'
+
+const { mapGetters } = createNamespacedHelpers('services');
 
 export default {
     name: 'ServicePageDetail',
-    data() {
-        return {
-            service: services.services.find(service => service.name == this.$route.params.serviceName),
-        };
+    computed: {
+        ...mapGetters([
+            'services'
+        ]),
+        service: function () {
+            if (this.services !== undefined) {
+                return this.services.find(service => service.name == this.$route.params.serviceName)
+            }
+            return {};
+        },
     },
     mounted() {
         var fixedElement = document.getElementsByClassName('v-app-bar')[0];
         var layout = document.getElementById('service-detail');
         layout.style = "margin-top: "+ fixedElement.offsetHeight + 'px !important';
-        console.log(services.services.find(service => service.name == this.$route.params.serviceName));
-    },
-    methods: {
-        //
     },
 };
 </script>

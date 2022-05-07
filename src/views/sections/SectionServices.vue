@@ -33,15 +33,19 @@
 </style>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
 import ServiceItem from '@/components/ServiceItem'
-import services from '@/data/services.yml'
+
+const { mapGetters } = createNamespacedHelpers('services');
 
 export default {
     components: {
         'service-item': ServiceItem
     },
-    data: () => ({
-        services: services.services
-    })
+    computed: {
+        ...mapGetters([
+            'services'
+        ]),
+    },
 }
 </script>
