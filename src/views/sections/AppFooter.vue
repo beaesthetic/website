@@ -65,13 +65,13 @@ export default {
             },
             {
                 icon: 'mdi-instagram',
-                name: 'beaesthetic',
-                link: '#'
+                name: 'centro.beaesthetic',
+                link: 'https://www.instagram.com/centro.beaesthetic/'
             },
             {
                 icon: 'mdi-whatsapp',
                 name: '+39 351 52 53 634',
-                link: 'whatsapp://send?abid=+393515253634'
+                link: 'https://wa.me/+393515253634'
             },
         ]
     }),
