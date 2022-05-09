@@ -10,7 +10,7 @@
 
                 <v-container fill-height class="service-header">
                     <v-row>
-                        <v-col cols="6" offset="3" class="white--text">
+                        <v-col class="white--text" cols="10" offset="1" sm="8" offset-sm="2" md="6" offset-md="3" lg="6" offset-lg="3" xl="6" offset-xl="3">
                             {{ service.title }}
                             <v-divider class="my-4 white"></v-divider>
                         </v-col>
@@ -18,7 +18,7 @@
                 </v-container>
             </v-img>
             <v-row class="my-5 fill-height">
-                <v-col cols="6" offset="3">
+                <v-col cols="10" offset="1" sm="8" offset-sm="2" md="6" offset-md="3" lg="6" offset-lg="3" xl="6" offset-xl="3">
                     <template v-for="(description, index) in service.descriptions">
                         <div :key="index">
                             <service-detail-description 
