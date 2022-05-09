@@ -1,0 +1,23 @@
+[
+  {
+    "section_name": "Trattamenti",
+    "route": "/#services",
+    "active_route": "/services"
+  },
+  {
+    "section_name": "Dove",
+    "route": "/#section-where-i-am"
+  },
+  {
+    "section_name": "Orari",
+    "route": "/#timetables"
+  },
+  {
+    "section_name": "Marchi",
+    "route": "/#partners"
+  },
+  {
+    "section_name": "Contatti",
+    "route": "/#contacts"
+  }
+]

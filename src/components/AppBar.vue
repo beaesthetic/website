@@ -23,7 +23,7 @@
           </v-row>
 
 
-          <v-btn icon v-if="isMobile" class="hidden-md-and-up">
+          <v-btn icon v-if="isMobile" class="hidden-md-and-up" @click="$emit('toggleDrawer')">
             <v-icon color="black">mdi-menu</v-icon>
           </v-btn>
           
@@ -62,14 +62,10 @@ export default {
   data: () => ({
     appBarScrolled: false,
     currentRoute: '',
-    menu: [
-      { section_name: "Trattamenti", route: "/#services", active_route: '/services' },
-      { section_name: "Dove", route: '/#section-where-i-am'},
-      { section_name: "Orari", route: '/#timetables'},
-      { section_name: "Marchi", route: '/#partners' },
-      { section_name: "Contatti", route: '/#contacts'},
-    ]
   }),
+  props: {
+    menu: Array,
+  },
   methods: {
     menuItemClick: function(item) {
       if ('route' in item) {

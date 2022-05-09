@@ -2,7 +2,7 @@
     <div>
         <v-row>
             <v-col>
-                <div :key="index" class="single-description">
+                <div class="single-description">
                     <h3 class="mt-5">{{ name }}</h3>
                     <h5 class="mt-2" v-if="subtitle !== undefined">{{ subtitle }}</h5>
                     <p class="mt-2">{{ description }}</p>

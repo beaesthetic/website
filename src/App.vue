@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <AppBar/>
+    <AppBar @toggleDrawer="toggleDrawer" :menu="routes"/>
+    <AppNavigationDrawer v-model="drawer" :menu="routes"/>
     <v-main>
       <router-view></router-view>
     </v-main>
@@ -20,14 +21,26 @@
 </style>
 
 <script>
+import * as routes from '@/data/routes.yml'
 import AppBar from './components/AppBar.vue'
+import AppNavigationDrawer from '@/components/AppNavigationDrawer'
 import appFooter from '@/views/sections/AppFooter'
 
 export default {
   name: 'App',
   components: {
     AppBar,
+    AppNavigationDrawer,
     'app-footer': appFooter,
-  }
+  },
+  methods: {
+    toggleDrawer: function () {
+      this.drawer = !this.drawer
+    }
+  },
+  data: () => ({
+    drawer: false,
+    routes: routes,
+  })
 }
 </script>
