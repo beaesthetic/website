@@ -5,7 +5,7 @@
                 <div class="single-description">
                     <h3 class="mt-5">{{ name }}</h3>
                     <h5 class="mt-2" v-if="subtitle !== undefined">{{ subtitle }}</h5>
-                    <p class="mt-2">{{ description }}</p>
+                    <p class="mt-2" v-html="description"></p>
                 </div>
             </v-col>
             <v-col md="auto" v-if="image !== undefined">
