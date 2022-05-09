@@ -10,7 +10,7 @@
 
                 <v-container fill-height class="service-header">
                     <v-row>
-                        <v-col cols="7" offset="3" class="white--text">
+                        <v-col cols="6" offset="3" class="white--text">
                             {{ service.title }}
                             <v-divider class="my-4 white"></v-divider>
                         </v-col>
@@ -18,11 +18,14 @@
                 </v-container>
             </v-img>
             <v-row class="my-5 fill-height">
-                <v-col cols="6" offset="4">
+                <v-col cols="6" offset="3">
                     <template v-for="(description, index) in service.descriptions">
-                        <div :key="index" class="single-description">
-                            <h3 class="mt-5">{{ description.name }}</h3>
-                            <p class="mt-2">{{ description.description }}</p>
+                        <div :key="index">
+                            <service-detail-description 
+                                :name="description.name"
+                                :subtitle="description.subtitle"
+                                :description="description.description"
+                                :image="description.image"/>
                             <v-divider class="my-4 black" v-show="index < service.descriptions.size - 1"></v-divider>
                         </div>
                     </template>
@@ -41,25 +44,19 @@
     font-size: 1.5em;
     font-weight: bold;
 }
-.single-description {
-    font-family: 'Montserrat';
-}
-.single-description h3 {
-    font-size: 1.1em;
-    font-weight: bold;
-}
-.single-description p {
-    font-size: 0.9em;
-}
 </style>
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+import serviceDetailDescription from '@/components/ServiceDetailDescription'
 
 const { mapGetters } = createNamespacedHelpers('services');
 
 export default {
     name: 'ServicePageDetail',
+    components: {
+        'service-detail-description': serviceDetailDescription
+    },
     computed: {
         ...mapGetters([
             'services'
