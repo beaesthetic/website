@@ -5,7 +5,7 @@
                 width="100%"
                 :src="service.thumbnail"
                 position="center center"
-                aspect-ratio="5"
+                :aspect-ratio="headerAspectRatio"
                 gradient="to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.2) 100%">
 
                 <v-container fill-height class="service-header">
@@ -66,6 +66,9 @@ export default {
                 return this.services.find(service => service.name == this.$route.params.serviceName)
             }
             return {};
+        },
+        headerAspectRatio() {
+            return this.$vuetify.breakpoint.smAndDown ? 2 : 5;
         },
     },
     mounted() {

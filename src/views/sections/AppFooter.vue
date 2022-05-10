@@ -9,7 +9,7 @@
                             Via Sant'Albertino, snc, 61043<br>
                             Cagli (PU)<br>
                             Tel. 351 52 53 634<br>
-                            P. iva 02600650016<br>
+                            P. iva 02773910415<br>
                         </v-col>
                         <v-col cols="12" lg="6" xl="6" md="6">
                             <div class="text-h7 mb-1" id="contacts-title"> Contatti </div>
