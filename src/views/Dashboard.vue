@@ -5,11 +5,30 @@
             white
             src="img/background-dashboard.jpg"
             gradient="to bottom, rgba(0, 0, 0, 0.11) 0%, rgba(0, 0, 0, 0.4) 100%">
+            <v-container id="contact-header" fluid class="hidden-sm-and-down">
+                <v-row justify="center" align="center">
+                    <v-col cols="2" offset="1">
+                        <v-layout class="d-inline-flex flex-wrap black--text">
+                            <template v-for="(contact, index) in contacts">
+                                <icon-with-text :icon="contact.icon" :href="contact.link" :key="index" icon-size="1.4em" />
+                            </template>
+                        </v-layout>
+                    </v-col>
+                    <v-col cols="5"></v-col>
+                    <v-col cols="2" offset="2">
+                        <v-layout wrap align-center>
+                            <a :href="phoneContact.link">
+                                <v-icon size="1.5em" class="mr-1">{{phoneContact.icon}}</v-icon>
+                                <span class="black--text">{{ phoneContact.name }}</span>
+                            </a>
+                        </v-layout>
+                    </v-col>
+                </v-row>
+            </v-container>
             <v-container fill-height>
                 <v-row fill-height align="center" justify="center">
                     <v-content class="text-center white--text">
-                        <v-row align="center" justify="center">   
-                            Ciaooo
+                        <v-row align="center" justify="center">
                             <!-- <v-col class="text-left">
                                 <img src="img/be-aesthetic-fit.png" alt="Be Aesthetic"/>
                             </v-col> -->
@@ -48,12 +67,23 @@
     </div>
 </template>
 
-
+<style scoped>
+#contact-header {
+    background-color: antiquewhite;
+    font-size: 0.7em;
+    font-family: 'Montserrat';
+}
+#contact-header a {
+    text-decoration: none;
+}
+</style>
 
 <script>
 import whereIAm from '@/views/sections/WhereIAm'
 import SectionServices from '@/views/sections/SectionServices'
 import partners from '@/views/sections/SectionPartners'
+import IconWithText from '@/components/IconWithText'
+import * as contacts from '@/data/contacts.yml'
 
 export default {
     name: 'main-dashboard',
@@ -61,7 +91,17 @@ export default {
         'partners': partners,
         'where-i-am': whereIAm,
         'section-services': SectionServices,
-    }
+        'icon-with-text': IconWithText
+    },
+    mounted: () => {
+        var fixedElement = document.getElementsByClassName('v-app-bar')[0];
+        var layout = document.getElementById('contact-header');
+        layout.style = "margin-top: "+ fixedElement.offsetHeight + 'px !important';
+    },
+    data: () => ({
+        contacts: contacts.filter(contact => contact.icon != 'mdi-phone'),
+        phoneContact: contacts.filter(contact => contact.icon == 'mdi-phone')[0],
+    }),
 }
 </script>
 

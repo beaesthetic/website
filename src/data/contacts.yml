@@ -1,0 +1,17 @@
+[
+  {
+    icon: 'mdi-phone',
+    name: '+39 351 52 53 634',
+    link: 'tel:+393515253634'
+  },
+  {
+    icon: 'mdi-instagram',
+    name: 'centro.beaesthetic',
+    link: 'https://www.instagram.com/centro.beaesthetic/'
+  },
+  {
+    icon: 'mdi-whatsapp',
+    name: '+39 351 52 53 634',
+    link: 'https://wa.me/+393515253634'
+  },
+]

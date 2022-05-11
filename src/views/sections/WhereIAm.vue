@@ -1,7 +1,7 @@
 <template>
     <v-container class="black--text py-16 px-4">
         <v-row>
-            <v-col cols="12" xl="6" lg="6">
+            <v-col cols="12" xl="6" lg="6" md="6">
                 <h2 class="text-h5 mb-3 text-center whereiam-title">Dove Sono</h2>
                 <v-divider class="my-4 mx-12 black"></v-divider>
                 <v-card height="400" class="text-center mx-auto" elevation="0">
@@ -16,7 +16,7 @@
                     </v-container>
                 </v-card>
             </v-col>
-            <v-col cols="12" xl="6" lg="6" id="timetables">
+            <v-col cols="12" xl="6" lg="6" md="6" id="timetables">
                 <h2 class="text-h5 mb-3 text-center whereiam-title">Orari</h2>
                 <v-divider class="my-4 mx-12 black"></v-divider>
                 <table class="text-h6 text-center mx-auto timetable mt-8">

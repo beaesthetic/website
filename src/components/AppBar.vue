@@ -8,7 +8,7 @@
               @click.stop="$router.push('/')"/>
           <v-spacer></v-spacer>
 
-          <v-row class="text-right hidden-sm-and-down">
+          <v-row class="text-right hidden-sm-and-down menu-items">
             <v-col>
               <template v-for="item in menu">
                 <v-btn 
@@ -23,7 +23,7 @@
           </v-row>
 
 
-          <v-btn icon v-if="isMobile" class="hidden-md-and-up" @click="$emit('toggleDrawer')">
+          <v-btn icon v-if="isMobile" class="hidden-md-and-up menu-items" @click="$emit('toggleDrawer')">
             <v-icon color="black">mdi-menu</v-icon>
           </v-btn>
           
@@ -48,6 +48,19 @@
 </template>
 
 <style scoped>
+.v-app-bar {
+  font-size: 1.5em !important;
+}
+
+.v-btn.v-size--default {
+  font-size: 0.45em !important;
+}
+
+.menu-items button {
+  font-family: 'Montserrat' !important;
+  font-weight: bold !important;
+}
+
 .v-btn.active {
   background-color: antiquewhite !important;
 }

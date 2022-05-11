@@ -12,10 +12,10 @@
                             P. iva 02773910415<br>
                         </v-col>
                         <v-col cols="12" lg="6" xl="6" md="6">
-                            <div class="text-h7 mb-1" id="contacts-title"> Contatti </div>
+                            <div class="text-h7 mb-2" id="contacts-title"> Contatti </div>
                             <v-layout class="d-inline-flex flex-wrap">
-                                <template v-for="(icon, index) in icons">
-                                    <icon-with-text class="ma-4" :title="icon.name" :icon="icon.icon" :href="icon.link" :key="index" />
+                                <template v-for="(contact, index) in contacts">
+                                    <icon-with-text class="mr-4" :title="contact.name" :icon="contact.icon" :href="contact.link" :key="index" />
                                 </template>
                             </v-layout>
                         </v-col>
@@ -49,7 +49,7 @@
 </style>
 
 <script>
-
+import * as contacts from '@/data/contacts.yml';
 import IconWithText from '@/components/IconWithText'
 
 export default {
@@ -57,23 +57,7 @@ export default {
         'icon-with-text': IconWithText
     },
     data: () => ({
-        icons: [
-            {
-                icon: 'mdi-phone',
-                name: '+39 351 52 53 634',
-                link: 'tel:+393515253634'
-            },
-            {
-                icon: 'mdi-instagram',
-                name: 'centro.beaesthetic',
-                link: 'https://www.instagram.com/centro.beaesthetic/'
-            },
-            {
-                icon: 'mdi-whatsapp',
-                name: '+39 351 52 53 634',
-                link: 'https://wa.me/+393515253634'
-            },
-        ]
+        contacts: contacts,
     }),
 }
 </script>
