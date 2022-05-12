@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 
 import Dashboard from '@/views/Dashboard'
 import ServicePageDetail from '@/views/pages/ServicePageDetail'
+import PromoPageDetail from '@/views/pages/PromoPageDetail'
+
 
 Vue.use(VueRouter)
 
@@ -16,6 +18,11 @@ const routes = [
         path: '/services/:serviceName',
         name: 'Servizio',
         component: ServicePageDetail
+    },
+    {
+        path: '/promos/',
+        name: 'Promo',
+        component: PromoPageDetail
     }
 ]
 

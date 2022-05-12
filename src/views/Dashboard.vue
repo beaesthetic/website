@@ -6,7 +6,7 @@
             src="img/background-dashboard.jpg"
             gradient="to bottom, rgba(0, 0, 0, 0.11) 0%, rgba(0, 0, 0, 0.4) 100%">
             <v-container id="contact-header" fluid class="hidden-sm-and-down">
-                <v-row justify="center" align="center">
+                <v-row align="center">
                     <v-col cols="2" offset="1">
                         <v-layout class="d-inline-flex flex-wrap black--text">
                             <template v-for="(contact, index) in contacts">
@@ -14,7 +14,9 @@
                             </template>
                         </v-layout>
                     </v-col>
-                    <v-col cols="5"></v-col>
+                    <v-col cols="5">
+                        <promo-reporter></promo-reporter>
+                    </v-col>
                     <v-col cols="2" offset="2">
                         <v-layout wrap align-center>
                             <a :href="phoneContact.link">
@@ -82,6 +84,7 @@
 import whereIAm from '@/views/sections/WhereIAm'
 import SectionServices from '@/views/sections/SectionServices'
 import partners from '@/views/sections/SectionPartners'
+import PromoReporter from '@/components/PromoReporter'
 import IconWithText from '@/components/IconWithText'
 import * as contacts from '@/data/contacts.yml'
 
@@ -91,7 +94,8 @@ export default {
         'partners': partners,
         'where-i-am': whereIAm,
         'section-services': SectionServices,
-        'icon-with-text': IconWithText
+        'icon-with-text': IconWithText,
+        PromoReporter
     },
     mounted: () => {
         var fixedElement = document.getElementsByClassName('v-app-bar')[0];

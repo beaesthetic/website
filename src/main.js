@@ -20,6 +20,7 @@ new Vue({
   store,
   render: h => h(App),
   beforeCreate: () => {
-    store.dispatch('services/fetchServices')
+    store.dispatch('content/fetchServices');
+    store.dispatch('content/fetchPromo');
   },
 }).$mount('#app')

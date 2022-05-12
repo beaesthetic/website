@@ -50,7 +50,7 @@
 import { createNamespacedHelpers } from 'vuex'
 import serviceDetailDescription from '@/components/ServiceDetailDescription'
 
-const { mapGetters } = createNamespacedHelpers('services');
+const { mapGetters } = createNamespacedHelpers('content');
 
 export default {
     name: 'ServicePageDetail',

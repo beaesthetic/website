@@ -36,7 +36,7 @@
 import { createNamespacedHelpers } from 'vuex'
 import ServiceItem from '@/components/ServiceItem'
 
-const { mapGetters } = createNamespacedHelpers('services');
+const { mapGetters } = createNamespacedHelpers('content');
 
 export default {
     components: {

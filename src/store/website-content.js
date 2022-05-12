@@ -5,9 +5,11 @@ export default {
     namespaced: true,
     state: {
         services: [],
+        promo: [],
     },
     getters: {
         services: state => state.services,
+        promo: state => state.promo
     },
     actions: {
         async fetchServices({ commit }) {
@@ -18,10 +20,23 @@ export default {
             }
             commit('setServices', services);
         },
+        async fetchPromo({ commit }) {
+            let promoDocs = await getDocs(collection(firestore, 'website-promo'));
+            let promo = [];
+            for (let doc of promoDocs.docs) {
+                let obj = doc.data();
+                obj['id'] = doc.id;
+                promo.push(obj);
+            }
+            commit('setPromo', promo);
+        }
     },
     mutations: {
         setServices(state, services) {
             state.services = services;
+        },
+        setPromo(state, promo) {
+            state.promo = promo;
         }
     }
 }

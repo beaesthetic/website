@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import serviceModule from '../store/services'
+import contentModule from '../store/website-content'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
     modules: {
-        services: serviceModule
+        content: contentModule
     }
 });
 

@@ -19,5 +19,10 @@
   {
     "section_name": "Contatti",
     "route": "/#contacts"
+  },
+  {
+    "section_name": "Promozioni",
+    "route": "/promo",
+    "active_route": "/promo"  
   }
 ]
