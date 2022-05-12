@@ -1,6 +1,6 @@
 <template>
     <v-row v-if="latest != undefined" justify="center" align="center">
-        <v-col cols="1" class="mr-1">    
+        <v-col cols="1" class="mr-1 text-right">    
             <v-icon size="1.5em">mdi-newspaper</v-icon>
         </v-col>
         <v-col cols="10">
@@ -57,7 +57,10 @@ export default {
         ]),
         latest: function() {
             if (this.promo !== undefined) {
-                return this.promo[this.promo.length - 1];
+                let ordered = Object.assign([], this.promo).sort(function(a, b){
+                    return new Date(b.insertDate.seconds * 1000) - new Date(a.insertDate.seconds * 1000);
+                });
+                return ordered[0];
             }
             return {};
         },

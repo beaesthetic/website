@@ -20,7 +20,7 @@ const routes = [
         component: ServicePageDetail
     },
     {
-        path: '/promos/',
+        path: '/promo/',
         name: 'Promo',
         component: PromoPageDetail
     }
