@@ -1,0 +1,113 @@
+name: security-scan
+
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+env:
+  DASHBOARD_ISSUE_NUMBER: 1
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Trivy config
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: config
+          scan-ref: .
+          hide-progress: true
+          format: template
+          template: "@.github/trivy-markdown.tpl"
+          output: trivy-config.md
+          severity: HIGH,CRITICAL
+          exit-code: 0
+
+      - name: Trivy secrets
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          scanners: secret
+          hide-progress: true
+          format: template
+          template: "@.github/trivy-markdown.tpl"
+          output: trivy-secrets.md
+          severity: HIGH,CRITICAL
+          exit-code: 0
+
+      - name: Build report
+        run: |
+          {
+            echo "# Security Report"
+            echo
+            echo "- Repo: \`${{ github.repository }}\`"
+            echo "- Ref: \`${{ github.ref_name }}\`"
+            echo "- Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo
+            echo "> This report is optimized for triage: each finding includes the affected target and the most actionable remediation detail Trivy exposed."
+            echo
+            echo "## IaC"
+            cat trivy-config.md
+            echo
+            echo "## Secrets"
+            cat trivy-secrets.md
+          } > report.md
+
+      - name: Publish workflow summary
+        run: cat report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload security report artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: trivy-security-report
+          path: report.md
+          retention-days: 14
+
+      - name: Update PR comment
+        if: github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v3
+        with:
+          header: security-dashboard
+          path: report.md
+
+      - name: Update issue body
+        if: github.event_name != 'pull_request'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('report.md', 'utf8');
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number(process.env.DASHBOARD_ISSUE_NUMBER),
+              body
+            });
+
+      - name: Fail on IaC findings
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: config
+          scan-ref: .
+          severity: HIGH,CRITICAL
+          exit-code: 1
+
+      - name: Fail on secret findings
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          scanners: secret
+          severity: HIGH,CRITICAL
+          exit-code: 1
