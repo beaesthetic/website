@@ -27,6 +27,8 @@
             <v-container><v-divider></v-divider></v-container>
             <v-card-text class="black--text copyright">
                 {{ new Date().getFullYear() }} — BeAesthetic - Site by Andrea Petreti
+                <span class="footer-separator">|</span>
+                <router-link class="privacy-link" to="/privacy-policy">Privacy Policy</router-link>
             </v-card-text>
         </v-card>
     </v-footer>
@@ -42,6 +44,13 @@
     font-weight: 100;
     font-size: 0.7em;
     text-align: right;
+}
+.footer-separator {
+    margin: 0 0.5rem;
+}
+.privacy-link {
+    color: inherit !important;
+    text-decoration: underline;
 }
 .footer-info {
     font-family: 'Montserrat' !important;
