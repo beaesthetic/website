@@ -1,11 +1,11 @@
 <template>
   <v-app>
-    <AppBar @toggleDrawer="toggleDrawer" :menu="routes"/>
-    <AppNavigationDrawer v-model="drawer" :menu="routes"/>
+    <AppBar v-if="showSiteChrome" @toggleDrawer="toggleDrawer" :menu="routes"/>
+    <AppNavigationDrawer v-if="showSiteChrome" v-model="drawer" :menu="routes"/>
     <v-main>
       <router-view></router-view>
     </v-main>
-    <app-footer/>
+    <app-footer v-if="showSiteChrome"/>
   </v-app>
 </template>
 
@@ -36,6 +36,11 @@ export default {
   methods: {
     toggleDrawer: function () {
       this.drawer = !this.drawer
+    }
+  },
+  computed: {
+    showSiteChrome() {
+      return !(this.$route.meta && this.$route.meta.standaloneLayout);
     }
   },
   data: () => ({

@@ -1,19 +1,26 @@
 <template>
-  <v-container class="legal-document-page">
-    <v-row justify="center">
-      <v-col cols="12" md="10" lg="8">
-        <div class="legal-document-card">
-          <div v-if="loading" class="legal-document-state">
-            Caricamento documento...
+  <div class="legal-document-shell">
+    <div class="legal-document-topbar">
+      <a class="legal-document-home-link" href="/" rel="noopener noreferrer">BeAesthetic</a>
+      <div class="legal-document-title">{{ pageTitle }}</div>
+    </div>
+
+    <v-container class="legal-document-page">
+      <v-row justify="center">
+        <v-col cols="12" md="10" lg="8">
+          <div class="legal-document-card">
+            <div v-if="loading" class="legal-document-state">
+              Caricamento documento...
+            </div>
+            <div v-else-if="error" class="legal-document-state">
+              {{ error }}
+            </div>
+            <article v-else class="legal-document-content" v-html="renderedContent"></article>
           </div>
-          <div v-else-if="error" class="legal-document-state">
-            {{ error }}
-          </div>
-          <article v-else class="legal-document-content" v-html="renderedContent"></article>
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -29,6 +36,9 @@ export default {
   computed: {
     renderedContent() {
       return renderMarkdown(this.content)
+    },
+    pageTitle() {
+      return this.$route.meta.title || 'Documento legale'
     },
     documentPath() {
       return this.$route.meta.documentPath
@@ -69,23 +79,79 @@ export default {
 </script>
 
 <style scoped>
+.legal-document-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(238, 214, 183, 0.45), transparent 30%),
+    linear-gradient(180deg, #f7efe5 0%, #fcfaf7 32%, #f7f2eb 100%);
+}
+
+.legal-document-topbar {
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 250, 244, 0.88);
+  border-bottom: 1px solid rgba(137, 103, 72, 0.12);
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 28px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.legal-document-home-link {
+  color: #2d241c;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.legal-document-title {
+  color: #6b5645;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+}
+
 .legal-document-page {
-  padding-top: 140px;
+  padding-top: 48px;
   padding-bottom: 64px;
 }
 
 .legal-document-card {
-  background: #fffdf8;
+  background: rgba(255, 253, 248, 0.94);
   border: 1px solid #eadfce;
-  border-radius: 18px;
-  padding: 32px 28px;
-  box-shadow: 0 10px 30px rgba(77, 56, 30, 0.08);
+  border-radius: 22px;
+  padding: 40px 34px;
+  box-shadow: 0 24px 60px rgba(77, 56, 30, 0.08);
   min-height: 320px;
 }
 
 .legal-document-state {
+  color: #4b3d31;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .legal-document-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 16px 18px;
+  }
+
+  .legal-document-page {
+    padding-top: 24px;
+    padding-bottom: 32px;
+  }
+
+  .legal-document-card {
+    border-radius: 16px;
+    padding: 24px 20px;
+  }
 }
 </style>
 

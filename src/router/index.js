@@ -32,7 +32,8 @@ const routes = [
         meta: {
             title: 'Privacy Policy',
             documentPath: '/legal/privacy-policy.md',
-            robots: 'noindex, nofollow'
+            robots: 'noindex, nofollow',
+            standaloneLayout: true
         }
     },
     {
@@ -42,7 +43,8 @@ const routes = [
         meta: {
             title: 'Admin App Privacy Policy',
             documentPath: '/legal/admin-app-privacy-policy.md',
-            robots: 'noindex, nofollow'
+            robots: 'noindex, nofollow',
+            standaloneLayout: true
         }
     }
 ]

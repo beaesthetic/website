@@ -28,7 +28,7 @@
             <v-card-text class="black--text copyright">
                 {{ new Date().getFullYear() }} — BeAesthetic - Site by Andrea Petreti
                 <span class="footer-separator">|</span>
-                <router-link class="privacy-link" to="/privacy-policy">Privacy Policy</router-link>
+                <a class="privacy-link" href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
             </v-card-text>
         </v-card>
     </v-footer>
