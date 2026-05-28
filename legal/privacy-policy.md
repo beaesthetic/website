@@ -27,7 +27,7 @@ Attraverso il sito possono essere pubblicate informazioni su:
 - marchi e partner;
 - eventuali promozioni.
 
-Il sito non e la piattaforma gestionale usata per conservare le schede cliente e non consente ai clienti di accedere a un'area riservata o consultare i propri dati.
+Il sito non offre un'area riservata clienti e non permette ai visitatori di consultare dati personali tramite account.
 
 ## 3. Dati trattati tramite il sito
 
