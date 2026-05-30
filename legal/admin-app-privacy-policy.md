@@ -1,18 +1,5 @@
 # Informativa privacy clienti
 
-## Controllo documentale
-
-| Campo | Valore |
-| --- | --- |
-| Titolo documento | Informativa privacy clienti |
-| Versione | [VERSIONE DA INSERIRE] |
-| Data di efficacia | [DATA DA INSERIRE] |
-| Ultimo aggiornamento | 2026-05-30 |
-| Stato | Bozza |
-| Approvato da | [DA COMPLETARE: Titolare del trattamento] |
-| Prossima revisione | Entro 12 mesi o prima in caso di nuovi trattamenti, fornitori, marketing, foto, dati particolari o analytics |
-| Motivo dell'aggiornamento | Chiarimento finalita, basi giuridiche, reminder SMS, Firebase/OCI, cookie/tecnologie e conservazione |
-
 La presente informativa e resa ai sensi degli articoli 12 e 13 del Regolamento (UE) 2016/679 ("GDPR") e della normativa italiana applicabile in materia di protezione dei dati personali.
 
 ## 1. Titolare del trattamento
