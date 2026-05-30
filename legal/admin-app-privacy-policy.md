@@ -8,7 +8,7 @@ Il Titolare del trattamento e:
 
 BeAesthetic di Nucci Beatrice  
 Via Sant'Albertino, snc, 61043 Cagli (PU)  
-Email: bea.nucci@hotmail.it  
+Email: centro.beaesthetic@gmail.com; bea.nucci@hotmail.it
 Telefono: +39 351 52 53 634
 
 Il centro non ha nominato un Responsabile della Protezione dei Dati (DPO), non ricorrendo allo stato attuale un obbligo di nomina ai sensi dell'art. 37 GDPR, salvo diversa valutazione futura.
